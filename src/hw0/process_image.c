@@ -6,13 +6,6 @@
 
 float get_pixel(image im, int x, int y, int c)
 {
-//    // TODO Fill this in
-//    if (im.w > x  && x > 0 && im.h > y && y > 0 && im.c > c && c >= 0){
-//        c += 1;
-//        return im.data[x*y*c];
-//
-//    }
-//    return 0;
     if (x < 0) {
         x = 0;
     } else if (x >= im.w) {
@@ -34,7 +27,7 @@ float get_pixel(image im, int x, int y, int c)
     return im.data[(im.w*im.h*c)+(im.w*y)+(x)];
 }
 
-void set_pixel(image im, int x, int y, int c, float v) 
+void set_pixel(image im, int x, int y, int c, float v)
 {
     // TODO Fill this in
     if ((x >= 0) && (x < im.w) && (y >= 0) && (y < im.h) && (c >= 0) && c < im.c){
@@ -75,6 +68,7 @@ image rgb_to_grayscale(image im)
 
 void shift_image(image im, int c, float v)
 {
+    // TODO Fill this in
     for (int i = 0; i < im.w; i++) {
         for (int j = 0; j < im.h; j++) {
             float newvalue = get_pixel(im, i, j, c) + v;
@@ -167,6 +161,8 @@ float hsv_to_rgb_func(float h, int n, float v, float s)
 
 void hsv_to_rgb(image im)
 {
+    // TODO Fill this in
+
     for (int j = 0; j < im.h; j++) {
         for (int i = 0; i < im.w; i++) {
             // get the rgb values to start with
@@ -184,5 +180,3 @@ void hsv_to_rgb(image im)
         }
     }
 }
-
-

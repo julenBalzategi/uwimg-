@@ -10,7 +10,6 @@ float nn_interpolate(image im, float x, float y, int c)
 image nn_resize(image im, int w, int h)
 {
     // TODO Fill in (also fix that first line)
-
     image ret_img = make_image(w,h,im.c);
     float old_x_top, old_y_top, old_x_bottom, old_y_bottom, new_x_bottom, new_x_top, new_y_bottom, new_y_top, ax, ay, bx, by, old_x, old_y;
 
@@ -50,6 +49,7 @@ image nn_resize(image im, int w, int h)
 
 float bilinear_interpolate(image im, float x, float y, int c)
 {
+    // TODO
     float right, left, top, bottom;
 
     top = floorf(y);
@@ -64,13 +64,10 @@ float bilinear_interpolate(image im, float x, float y, int c)
 
     return q1 * (bottom - y) + q2 * (y - top);
 
-
 }
 
 image bilinear_resize(image im, int w, int h)
 {
-
-    
     // TODO
     image ret_img = make_image(w,h,im.c);
     float old_x_top, old_y_top, old_x_bottom, old_y_bottom, new_x_bottom, new_x_top, new_y_bottom, new_y_top, ax, ay, bx, by, old_x, old_y;
@@ -116,6 +113,3 @@ image bilinear_resize(image im, int w, int h)
 
     return ret_img;
 }
-
-
-
