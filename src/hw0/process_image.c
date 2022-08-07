@@ -18,10 +18,10 @@ float get_pixel(image im, int x, int y, int c)
     }
     // channel clamping really shouldn't ever happen
     if (c < 0) {
-        fprintf(stderr, "get_pixel clamping from negative on c=%d", c);
+        //fprintf(stderr, "get_pixel clamping from negative on c=%d", c);
         c = 0;
     } else if (c >= im.c) {
-        fprintf(stderr, "get_pixel clamping from positive on c=%d", c);
+        //fprintf(stderr, "get_pixel clamping from positive on c=%d", c);
         c = im.c - 1;
     }
     return im.data[(im.w*im.h*c)+(im.w*y)+(x)];
